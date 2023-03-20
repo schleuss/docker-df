@@ -1,8 +1,10 @@
 FROM python:3.10-slim
 
-RUN pip3 install docker
-
 WORKDIR /app
+
+ADD requirements.txt /app
+
+RUN pip install -r requirements.txt
 
 ADD docker-df.py /app
 
